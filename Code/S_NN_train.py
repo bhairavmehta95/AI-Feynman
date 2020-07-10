@@ -40,7 +40,7 @@ def rmse_loss(pred, targ):
     denom = torch.sqrt(denom.sum()/len(denom))
     return torch.sqrt(F.mse_loss(pred, targ))/denom
 
-def NN_train(pathdir, filename, epochs=1000, lrs=1e-2, N_red_lr=4, pretrained_path=""):
+def NN_train(pathdir, filename, epochs=1000, lrs=1e-3, N_red_lr=4, pretrained_path=""):
     try:
         os.mkdir("results/NN_trained_models/")
     except:
